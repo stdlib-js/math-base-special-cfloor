@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/math-base-special-cfloor",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Round a complex number toward negative infinity.",
   "license": "Apache-2.0",
   "author": {
