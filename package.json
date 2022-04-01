@@ -1,0 +1,35 @@
+{
+  "name": "@stdlib/math-base-special-cfloor",
+  "version": "0.0.0",
+  "description": "Round a complex number toward negative infinity.",
+  "license": "Apache-2.0",
+  "main": "./bundle.js",
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/math-base-special-cfloor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/stdlib/issues"
+  },
+  "keywords": [
+    "stdlib",
+    "stdmath",
+    "mathematics",
+    "math",
+    "math.floor",
+    "floor",
+    "cfloor",
+    "round",
+    "integer",
+    "nearest",
+    "value",
+    "complex",
+    "cmplx",
+    "number"
+  ],
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/athan"
+  }
+}
