@@ -24,14 +24,30 @@ limitations under the License.
 
 > Round a complex number toward negative infinity.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/math-base-special-cfloor
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import cfloor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cfloor@esm/index.mjs';
+var cfloor = require( '@stdlib/math-base-special-cfloor' );
 ```
 
 #### cfloor( \[out,] re, im )
@@ -55,7 +71,7 @@ v = cfloor( NaN, NaN );
 By default, the function returns real and imaginary components as a two-element `array`. To avoid unnecessary memory allocation, the function supports providing an output (destination) object.
 
 ```javascript
-import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
+var Float32Array = require( '@stdlib/array-float32' );
 
 var out = new Float32Array( 2 );
 
@@ -76,17 +92,12 @@ var bool = ( v === out );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64@esm/index.mjs';
-import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@esm/index.mjs';
-import real from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-real@esm/index.mjs';
-import imag from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-imag@esm/index.mjs';
-import cfloor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cfloor@esm/index.mjs';
+```javascript
+var Complex128 = require( '@stdlib/complex-float64' );
+var randu = require( '@stdlib/random-base-randu' );
+var real = require( '@stdlib/complex-real' );
+var imag = require( '@stdlib/complex-imag' );
+var cfloor = require( '@stdlib/math-base-special-cfloor' );
 
 var re;
 var im;
@@ -103,10 +114,6 @@ for ( i = 0; i < 100; i++ ) {
     w = new Complex128( o[ 0 ], o[ 1 ] );
     console.log( 'floor(%s) = %s', z.toString(), w.toString() );
 }
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -121,9 +128,9 @@ for ( i = 0; i < 100; i++ ) {
 
 ## See Also
 
--   <span class="package-name">[`@stdlib/math/base/special/cceil`][@stdlib/math/base/special/cceil]</span><span class="delimiter">: </span><span class="description">round a complex number toward positive infinity.</span>
--   <span class="package-name">[`@stdlib/math/base/special/cfloorn`][@stdlib/math/base/special/cfloorn]</span><span class="delimiter">: </span><span class="description">round a complex number to the nearest multiple of 10^n toward negative infinity.</span>
--   <span class="package-name">[`@stdlib/math/base/special/cround`][@stdlib/math/base/special/cround]</span><span class="delimiter">: </span><span class="description">round a complex number to the nearest integer.</span>
+-   <span class="package-name">[`@stdlib/math-base/special/cceil`][@stdlib/math/base/special/cceil]</span><span class="delimiter">: </span><span class="description">round a complex number toward positive infinity.</span>
+-   <span class="package-name">[`@stdlib/math-base/special/cfloorn`][@stdlib/math/base/special/cfloorn]</span><span class="delimiter">: </span><span class="description">round a complex number to the nearest multiple of 10^n toward negative infinity.</span>
+-   <span class="package-name">[`@stdlib/math-base/special/cround`][@stdlib/math/base/special/cround]</span><span class="delimiter">: </span><span class="description">round a complex number to the nearest integer.</span>
 
 </section>
 
@@ -138,7 +145,7 @@ for ( i = 0; i < 100; i++ ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -200,11 +207,11 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/math/base/special/cceil]: https://github.com/stdlib-js/math-base-special-cceil/tree/esm
+[@stdlib/math/base/special/cceil]: https://github.com/stdlib-js/math-base-special-cceil
 
-[@stdlib/math/base/special/cfloorn]: https://github.com/stdlib-js/math-base-special-cfloorn/tree/esm
+[@stdlib/math/base/special/cfloorn]: https://github.com/stdlib-js/math-base-special-cfloorn
 
-[@stdlib/math/base/special/cround]: https://github.com/stdlib-js/math-base-special-cround/tree/esm
+[@stdlib/math/base/special/cround]: https://github.com/stdlib-js/math-base-special-cround
 
 <!-- </related-links> -->
 
