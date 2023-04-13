@@ -31,7 +31,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import cfloor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cfloor@esm/index.mjs';
+import cfloor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cfloor@v0.0.7-esm/index.mjs';
 ```
 
 #### cfloor( z )
@@ -98,7 +98,7 @@ im = imag( v );
 
 import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64@esm/index.mjs';
 import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@esm/index.mjs';
-import cfloor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cfloor@esm/index.mjs';
+import cfloor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cfloor@v0.0.7-esm/index.mjs';
 
 var re;
 var im;
