@@ -22,72 +22,78 @@ limitations under the License.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
-> Round a complex number toward negative infinity.
+> Round a double-precision complex floating-point number toward negative infinity.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/math-base-special-cfloor
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
+```javascript
+var cfloor = require( '@stdlib/math-base-special-cfloor' );
+```
+
+#### cfloor( z )
+
+Rounds a double-precision complex floating-point number toward negative infinity.
 
 ```javascript
-cfloor = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cfloor@umd/browser.js' )
-```
+var Complex128 = require( '@stdlib/complex-float64' );
+var real = require( '@stdlib/complex-real' );
+var imag = require( '@stdlib/complex-imag' );
 
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
+var v = cfloor( new Complex128( -4.2, 5.5 ) );
+// returns <Complex128>
 
-```javascript
-var cfloor = require( 'path/to/vendor/umd/math-base-special-cfloor/index.js' )
-```
+var re = real( v );
+// returns -5.0
 
-To include the bundle in a webpage,
+var im = imag( v );
+// returns 5.0
 
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cfloor@umd/browser.js"></script>
-```
+v = cfloor( new Complex128( 9.99999, 0.1 ) );
+// returns <Complex128>
 
-If no recognized module system is present, access bundle contents via the global scope:
+re = real( v );
+// returns 9.0
 
-```html
-<script type="text/javascript">
-(function () {
-    window.cfloor;
-})();
-</script>
-```
+im = imag( v );
+// returns 0.0
 
-#### cfloor( \[out,] re, im )
+v = cfloor( new Complex128( 0.0, 0.0 ) );
+// returns <Complex128>
 
-Rounds a `complex` number comprised of a **real** component `re` and an **imaginary** component `im` toward negative infinity.
+re = real( v );
+// returns 0.0
 
-```javascript
-var v = cfloor( -4.2, 5.5 );
-// returns [ -5.0, 5.0 ]
+im = imag( v );
+// returns 0.0
 
-v = cfloor( 9.99999, 0.1 );
-// returns [ 9.0, 0.0 ]
+v = cfloor( new Complex128( NaN, NaN ) );
+// returns <Complex128>
 
-v = cfloor( 0.0, 0.0 );
-// returns [ 0.0, 0.0 ]
+re = real( v );
+// returns NaN
 
-v = cfloor( NaN, NaN );
-// returns [ NaN, NaN ]
-```
-
-By default, the function returns real and imaginary components as a two-element `array`. To avoid unnecessary memory allocation, the function supports providing an output (destination) object.
-
-```javascript
-var Float32Array = require( '@stdlib/array-float32' );
-
-var out = new Float32Array( 2 );
-
-var v = cfloor( out, -4.2, 5.5 );
-// returns <Float32Array>[ -5.0, 5.0 ]
-
-var bool = ( v === out );
-// returns true
+im = imag( v );
+// returns NaN
 ```
 
 </section>
@@ -100,22 +106,14 @@ var bool = ( v === out );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/complex-real@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/complex-imag@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cfloor@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var Complex128 = require( '@stdlib/complex-float64' );
+var randu = require( '@stdlib/random-base-randu' );
+var cfloor = require( '@stdlib/math-base-special-cfloor' );
 
 var re;
 var im;
 var z;
-var o;
 var w;
 var i;
 
@@ -123,20 +121,125 @@ for ( i = 0; i < 100; i++ ) {
     re = ( randu()*100.0 ) - 50.0;
     im = ( randu()*100.0 ) - 50.0;
     z = new Complex128( re, im );
-    o = cfloor( real(z), imag(z) );
-    w = new Complex128( o[ 0 ], o[ 1 ] );
+    w = cfloor( z );
     console.log( 'floor(%s) = %s', z.toString(), w.toString() );
 }
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
 
 <!-- /.examples -->
+
+<!-- C interface documentation. -->
+
+* * *
+
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/math/base/special/cfloor.h"
+```
+
+#### stdlib_base_cfloor( z )
+
+Rounds a double-precision complex floating-point number toward negative infinity.
+
+```c
+#include "stdlib/complex/float64.h"
+#include "stdlib/complex/real.h"
+#include "stdlib/complex/imag.h"
+
+stdlib_complex128_t z = stdlib_complex128( 2.5, -1.5 );
+
+stdlib_complex128_t out = stdlib_base_cfloor( z );
+
+double re = stdlib_real( out );
+// returns 2.0
+
+double im = stdlib_imag( out );
+// returns -2.0
+```
+
+The function accepts the following arguments:
+
+-   **z**: `[in] stdlib_complex128_t` input value.
+
+```c
+stdlib_complex128_t stdlib_base_cfloor( const stdlib_complex128_t z );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/math/base/special/cfloor.h"
+#include "stdlib/complex/float64.h"
+#include "stdlib/complex/reim.h"
+#include <stdio.h>
+
+int main() {
+    const stdlib_complex128_t x[] = {
+        stdlib_complex128( 3.14, 1.5 ),
+        stdlib_complex128( -3.14, -1.5 ),
+        stdlib_complex128( 0.0, 0.0 ),
+        stdlib_complex128( 0.0/0.0, 0.0/0.0 )
+    };
+
+    stdlib_complex128_t v;
+    stdlib_complex128_t y;
+    double re1;
+    double im1;
+    double re2;
+    double im2;
+    int i;
+    for ( i = 0; i < 4; i++ ) {
+        v = x[ i ];
+        y = stdlib_base_cfloor( v );
+        stdlib_reim( v, &re1, &im1 );
+        stdlib_reim( y, &re2, &im2 );
+        printf( "cfloor(%lf + %lfi) = %lf + %lfi\n", re1, im1, re2, im2 );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -225,11 +328,11 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/math/base/special/cceil]: https://github.com/stdlib-js/math-base-special-cceil/tree/umd
+[@stdlib/math/base/special/cceil]: https://github.com/stdlib-js/math-base-special-cceil
 
-[@stdlib/math/base/special/cfloorn]: https://github.com/stdlib-js/math-base-special-cfloorn/tree/umd
+[@stdlib/math/base/special/cfloorn]: https://github.com/stdlib-js/math-base-special-cfloorn
 
-[@stdlib/math/base/special/cround]: https://github.com/stdlib-js/math-base-special-cround/tree/umd
+[@stdlib/math/base/special/cround]: https://github.com/stdlib-js/math-base-special-cround
 
 <!-- </related-links> -->
 
