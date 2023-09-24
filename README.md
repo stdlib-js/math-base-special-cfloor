@@ -35,30 +35,14 @@ limitations under the License.
 
 > Round a double-precision complex floating-point number toward negative infinity.
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/math-base-special-cfloor
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
--   If you are using Deno, visit the [`deno` branch][deno-url].
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-var cfloor = require( '@stdlib/math-base-special-cfloor' );
+import cfloor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cfloor@deno/mod.js';
 ```
 
 #### cfloor( z )
@@ -66,9 +50,9 @@ var cfloor = require( '@stdlib/math-base-special-cfloor' );
 Rounds a double-precision complex floating-point number toward negative infinity.
 
 ```javascript
-var Complex128 = require( '@stdlib/complex-float64' );
-var real = require( '@stdlib/complex-real' );
-var imag = require( '@stdlib/complex-imag' );
+import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64@deno/mod.js';
+import real from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-real@deno/mod.js';
+import imag from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-imag@deno/mod.js';
 
 var v = cfloor( new Complex128( -4.2, 5.5 ) );
 // returns <Complex128>
@@ -118,9 +102,9 @@ im = imag( v );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-var Complex128 = require( '@stdlib/complex-float64' );
-var randu = require( '@stdlib/random-base-randu' );
-var cfloor = require( '@stdlib/math-base-special-cfloor' );
+import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64@deno/mod.js';
+import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@deno/mod.js';
+import cfloor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cfloor@deno/mod.js';
 
 var re;
 var im;
@@ -143,114 +127,7 @@ for ( i = 0; i < 100; i++ ) {
 
 <!-- C interface documentation. -->
 
-* * *
 
-<section class="c">
-
-## C APIs
-
-<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
-
-<section class="intro">
-
-</section>
-
-<!-- /.intro -->
-
-<!-- C usage documentation. -->
-
-<section class="usage">
-
-### Usage
-
-```c
-#include "stdlib/math/base/special/cfloor.h"
-```
-
-#### stdlib_base_cfloor( z )
-
-Rounds a double-precision complex floating-point number toward negative infinity.
-
-```c
-#include "stdlib/complex/float64.h"
-#include "stdlib/complex/real.h"
-#include "stdlib/complex/imag.h"
-
-stdlib_complex128_t z = stdlib_complex128( 2.5, -1.5 );
-
-stdlib_complex128_t out = stdlib_base_cfloor( z );
-
-double re = stdlib_real( out );
-// returns 2.0
-
-double im = stdlib_imag( out );
-// returns -2.0
-```
-
-The function accepts the following arguments:
-
--   **z**: `[in] stdlib_complex128_t` input value.
-
-```c
-stdlib_complex128_t stdlib_base_cfloor( const stdlib_complex128_t z );
-```
-
-</section>
-
-<!-- /.usage -->
-
-<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
-
-<section class="notes">
-
-</section>
-
-<!-- /.notes -->
-
-<!-- C API usage examples. -->
-
-<section class="examples">
-
-### Examples
-
-```c
-#include "stdlib/math/base/special/cfloor.h"
-#include "stdlib/complex/float64.h"
-#include "stdlib/complex/reim.h"
-#include <stdio.h>
-
-int main( void ) {
-    const stdlib_complex128_t x[] = {
-        stdlib_complex128( 3.14, 1.5 ),
-        stdlib_complex128( -3.14, -1.5 ),
-        stdlib_complex128( 0.0, 0.0 ),
-        stdlib_complex128( 0.0/0.0, 0.0/0.0 )
-    };
-
-    stdlib_complex128_t v;
-    stdlib_complex128_t y;
-    double re1;
-    double im1;
-    double re2;
-    double im2;
-    int i;
-    for ( i = 0; i < 4; i++ ) {
-        v = x[ i ];
-        y = stdlib_base_cfloor( v );
-        stdlib_reim( v, &re1, &im1 );
-        stdlib_reim( y, &re2, &im2 );
-        printf( "cfloor(%lf + %lfi) = %lf + %lfi\n", re1, im1, re2, im2 );
-    }
-}
-```
-
-</section>
-
-<!-- /.examples -->
-
-</section>
-
-<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -277,7 +154,7 @@ int main( void ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -339,11 +216,11 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/math/base/special/cceil]: https://github.com/stdlib-js/math-base-special-cceil
+[@stdlib/math/base/special/cceil]: https://github.com/stdlib-js/math-base-special-cceil/tree/deno
 
-[@stdlib/math/base/special/cfloorn]: https://github.com/stdlib-js/math-base-special-cfloorn
+[@stdlib/math/base/special/cfloorn]: https://github.com/stdlib-js/math-base-special-cfloorn/tree/deno
 
-[@stdlib/math/base/special/cround]: https://github.com/stdlib-js/math-base-special-cround
+[@stdlib/math/base/special/cround]: https://github.com/stdlib-js/math-base-special-cround/tree/deno
 
 <!-- </related-links> -->
 
