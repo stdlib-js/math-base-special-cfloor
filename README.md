@@ -42,6 +42,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import cfloor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cfloor@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/math-base-special-cfloor/tags). For example,
+
+```javascript
 import cfloor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cfloor@v0.1.1-esm/index.mjs';
 ```
 
@@ -109,7 +114,7 @@ im = imag( v );
 
 import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64@esm/index.mjs';
 import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@esm/index.mjs';
-import cfloor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cfloor@v0.1.1-esm/index.mjs';
+import cfloor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cfloor@esm/index.mjs';
 
 var re;
 var im;
