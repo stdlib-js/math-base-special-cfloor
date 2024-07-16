@@ -68,7 +68,7 @@ var cfloor = require( '@stdlib/math-base-special-cfloor' );
 Rounds a double-precision complex floating-point number toward negative infinity.
 
 ```javascript
-var Complex128 = require( '@stdlib/complex-float64' );
+var Complex128 = require( '@stdlib/complex-float64-ctor' );
 var real = require( '@stdlib/complex-real' );
 var imag = require( '@stdlib/complex-imag' );
 
@@ -120,7 +120,7 @@ im = imag( v );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-var Complex128 = require( '@stdlib/complex-float64' );
+var Complex128 = require( '@stdlib/complex-float64-ctor' );
 var randu = require( '@stdlib/random-base-randu' );
 var cfloor = require( '@stdlib/math-base-special-cfloor' );
 
@@ -174,7 +174,7 @@ for ( i = 0; i < 100; i++ ) {
 Rounds a double-precision complex floating-point number toward negative infinity.
 
 ```c
-#include "stdlib/complex/float64.h"
+#include "stdlib/complex/float64/ctor.h"
 #include "stdlib/complex/real.h"
 #include "stdlib/complex/imag.h"
 
@@ -217,8 +217,8 @@ stdlib_complex128_t stdlib_base_cfloor( const stdlib_complex128_t z );
 
 ```c
 #include "stdlib/math/base/special/cfloor.h"
-#include "stdlib/complex/float64.h"
-#include "stdlib/complex/reim.h"
+#include "stdlib/complex/float64/ctor.h"
+#include "stdlib/complex/float64/reim.h"
 #include <stdio.h>
 
 int main( void ) {
@@ -239,8 +239,8 @@ int main( void ) {
     for ( i = 0; i < 4; i++ ) {
         v = x[ i ];
         y = stdlib_base_cfloor( v );
-        stdlib_reim( v, &re1, &im1 );
-        stdlib_reim( y, &re2, &im2 );
+        stdlib_complex128_reim( v, &re1, &im1 );
+        stdlib_complex128_reim( y, &re2, &im2 );
         printf( "cfloor(%lf + %lfi) = %lf + %lfi\n", re1, im1, re2, im2 );
     }
 }
