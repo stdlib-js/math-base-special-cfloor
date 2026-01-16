@@ -81,7 +81,6 @@ v = cfloor( new Complex128( 0.0, 0.0 ) );
 
 v = cfloor( new Complex128( NaN, NaN ) );
 // returns <Complex128>[ NaN, NaN ]
-
 ```
 
 </section>
