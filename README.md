@@ -69,44 +69,19 @@ Rounds a double-precision complex floating-point number toward negative infinity
 
 ```javascript
 var Complex128 = require( '@stdlib/complex-float64-ctor' );
-var real = require( '@stdlib/complex-float64-real' );
-var imag = require( '@stdlib/complex-float64-imag' );
 
 var v = cfloor( new Complex128( -4.2, 5.5 ) );
-// returns <Complex128>
-
-var re = real( v );
-// returns -5.0
-
-var im = imag( v );
-// returns 5.0
+// returns <Complex128>[ -5.0, 5.0 ]
 
 v = cfloor( new Complex128( 9.99999, 0.1 ) );
-// returns <Complex128>
-
-re = real( v );
-// returns 9.0
-
-im = imag( v );
-// returns 0.0
+// returns <Complex128>[ 9.0, 0.0 ]
 
 v = cfloor( new Complex128( 0.0, 0.0 ) );
-// returns <Complex128>
-
-re = real( v );
-// returns 0.0
-
-im = imag( v );
-// returns 0.0
+// returns <Complex128>[ 0.0, 0.0 ]
 
 v = cfloor( new Complex128( NaN, NaN ) );
-// returns <Complex128>
+// returns <Complex128>[ NaN, NaN ]
 
-re = real( v );
-// returns NaN
-
-im = imag( v );
-// returns NaN
 ```
 
 </section>
@@ -296,7 +271,7 @@ See [LICENSE][stdlib-license].
 
 ## Copyright
 
-Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 </section>
 
@@ -322,8 +297,8 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 -->
 
-[chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
-[chat-url]: https://app.gitter.im/#/room/#stdlib-js_stdlib:gitter.im
+[chat-image]: https://img.shields.io/badge/zulip-join_chat-brightgreen.svg
+[chat-url]: https://stdlib.zulipchat.com
 
 [stdlib]: https://github.com/stdlib-js/stdlib
 
