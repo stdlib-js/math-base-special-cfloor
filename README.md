@@ -42,7 +42,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import cfloor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cfloor@deno/mod.js';
+import cfloor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cfloor@v0.2.3-deno/mod.js';
 ```
 
 #### cfloor( z )
@@ -78,7 +78,7 @@ v = cfloor( new Complex128( NaN, NaN ) );
 ```javascript
 import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-ctor@deno/mod.js';
 import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@deno/mod.js';
-import cfloor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cfloor@deno/mod.js';
+import cfloor from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-cfloor@v0.2.3-deno/mod.js';
 
 var re;
 var im;
